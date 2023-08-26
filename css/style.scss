@@ -1,0 +1,546 @@
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* !центр замена контейнер */
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+/* !шапка */
+.bgctop {
+  height: 735px;
+  background-image: url(../img/bgctop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  height: 77px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.logotop {
+  margin-top: 10px;
+}
+
+.header__input {
+  width: 288px;
+  height: 41px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 32px 0px 32px;
+  font-family: Montserrat;
+}
+
+.header__input::placeholder {
+  color: #fff;
+  box-sizing: border-box;
+  /* елси padding: 0px 32px 0 32px; добавить к этому классу то ввод в инпуте будет с самого края, сейчас ввод будет с первой буквы текста "Поиск"*/
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+
+  &-mob {
+    display: none;
+  }
+}
+
+.menu__link {
+  font-size: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.menu__link::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: #fff;
+  transition: 250ms;
+}
+
+.menu__link:hover::after {
+  width: 100%;
+  /* Альтернатива:
+ border-bottom: 1px solid #000;
+padding-bottom: *px; - растояние линии
+*/
+}
+
+.title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 70px;
+  margin: 64px 0 16px 0;
+  color: #fff;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+.top__text {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 16px 0;
+  color: #fff;
+  font-weight: 400;
+}
+
+.top__link {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration-line: underline;
+  transition: all 0.24s;
+
+}
+
+.top__link:hover {
+  color: #00000081;
+  text-decoration: none;
+
+}
+
+/* !мебель для */
+.for {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.for__item {
+  height: 415px;
+  grid-column: span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.24s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.for__item-link {
+  color: #FFF;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.for__item_big {
+  grid-column: span 6;
+  ;
+}
+
+.for__item_1 {
+  background-image: url(../img/RELAX.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.for__item_2 {
+  background-image: url(../img/JOB.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.for__item_3 {
+  background-image: url(../img/KITCHEN.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.for__item_4 {
+  background-image: url(../img/CHILD.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.for__item_5 {
+  background-image: url(../img/BATHROOM.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* !Карточки */
+.heading {
+  font-weight: 600;
+  font-size: 48px;
+  color: #000000;
+  margin: 64px 0 32px 0;
+  font-style: normal;
+  line-height: normal;
+}
+
+.product-content {
+  display: flex;
+  column-gap: 32px;
+  row-gap: 48px;
+  flex-wrap: wrap;
+
+}
+
+.product {
+  width: 378px;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: transform 0.24s, box-shadow 0.24s;
+  border-radius: 4px;
+  padding: 10px;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.1);
+  }
+}
+
+.product__img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.product__heading {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin: 10px 0 8px 0;
+}
+
+.product__heading a {
+  color: #000;
+}
+
+.product__text {
+  font-size: 14px;
+  line-height: 17px;
+  color: #888888;
+  margin: 0 0 12px 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.product__box-price {
+  display: flex;
+  column-gap: 32px;
+}
+
+.product__price {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #050505;
+}
+
+.product__price_sale {
+  text-decoration-line: line-through;
+  color: #888888;
+  font-size: 24px;
+}
+
+.link-box {
+  margin: 32px 0 64px 0;
+}
+
+.product__link {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+
+.product__link::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: black;
+  transition: 250ms;
+}
+
+.product__link:hover::after {
+  width: 0;
+  color: #888;
+}
+
+/* ! footer */
+.footer {
+  background-color: #f7f6f6;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer__content {
+  width: 792px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  margin-top: 10px;
+}
+
+.footer__info {
+  display: flex;
+  gap: 129px;
+}
+
+.footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__icons {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+}
+
+.footer__icon path {
+  transition: all 0.24s;
+}
+
+.footer__icon:hover path {
+  fill: #000;
+}
+
+.footer__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.footer__link {
+  font-weight: 500;
+  font-size: 14px;
+  color: #888888;
+  text-decoration: none;
+  font-style: normal;
+  line-height: normal;
+
+  &::after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: #888888;
+    transition: 250ms;
+  }
+}
+
+.footer__link:hover::after {
+  width: 100%;
+}
+
+.form__text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  padding: 0 0 16px 0;
+}
+
+.form__email {
+  width: 275px;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 18px;
+  color: black;
+  padding: 12px 25px 12px 25px;
+  outline: none;
+  margin: 0 0 12px 0;
+  font-family: Montserrat;
+}
+
+.form__email::placeholder {
+  color: #c4c4c4;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.form__button {
+  background: rgba(222, 215, 215, 0.41);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 275px;
+  height: 46px;
+  font-size: 14px;
+  color: #000000;
+  font-family: Montserrat;
+  border: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.form__button:hover {
+  color: #fff;
+  background-color: #000000;
+}
+
+/* !каталог СТР2 */
+.bgctop__catalog {
+  height: 400px;
+  background-image: url(../img/CatalogBG.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title__catalog {
+  margin-top: 127px;
+  color: #FFF;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+.sort__select {
+  width: 288px;
+  border-radius: 20px;
+  border: 1px solid #C4C4C4;
+  padding: 11px 33px 11px 15px;
+  appearance: none;
+  background: url(../img/strel.png) no-repeat right;
+  background-position-x: calc(100% - 20px);
+  font-family: Montserrat;
+}
+
+.sort__select:hover {
+  border: 1px solid #000000;
+}
+
+.sort__select_text {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__info {
+  margin: 64px 0 41px 0;
+}
+
+.card__nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.card__link {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.card__link::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: black;
+  transition: 250ms;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__slash {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@import 'cart';
+@import 'tablet';
+@import 'mobile';
